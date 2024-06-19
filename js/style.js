@@ -26,13 +26,16 @@ function openNewWindow(url) {
   }
 }
 
-var skillData = [70, 60, 50, 45]; // 숙련도 데이터
+let skillData = [70, 60, 50, 45]; // 숙련도 데이터
 
 // Canvas 요소 가져오기
-var ctx = document.getElementById("myBarChart").getContext("2d");
+let ctx = document.getElementById("myBarChart").getContext("2d");
+
+// 애니메이션 상태 저장 변수
+let animationComplete = false;
 
 // 막대 그래프 생성
-var myBarChart = new Chart(ctx, {
+let myBarChart = new Chart(ctx, {
   type: "bar", // 그래프 유형: 막대 그래프
   data: {
     labels: ["HTML", "CSS", "JavaScript", "React"], // X 축 레이블
@@ -70,6 +73,33 @@ var myBarChart = new Chart(ctx, {
     },
     responsive: true, // 반응형 크기 조정
     maintainAspectRatio: false, // 캔버스 비율 유지 해제
+    animation: {
+      duration: 500,
+      easing: "easeOutQuart",
+      onProgress: function (animation) {
+        if (animationComplete) return; // 애니메이션이 완료된 경우 실행 중지
+        const chart = animation.chart;
+        const width = chart.width;
+        const height = chart.height;
+        const ctx = chart.ctx;
+        ctx.save();
+        ctx.clearRect(0, 0, width, height);
+        ctx.translate(width / 2, height / 2);
+        ctx.scale(
+          animation.currentStep / animation.numSteps,
+          animation.currentStep / animation.numSteps
+        );
+        ctx.translate(-width / 2, -height / 2);
+        chart.draw();
+        ctx.restore();
+      },
+      onComplete: function () {
+        animationComplete = true; // 애니메이션 완료 상태 설정
+        // 애니메이션 콜백 제거
+        myBarChart.options.animation.onProgress = null;
+        myBarChart.options.animation.onComplete = null;
+      },
+    },
   },
 });
 
@@ -86,4 +116,29 @@ document.addEventListener("DOMContentLoaded", function () {
   xMark.addEventListener("click", function () {
     myIntroduce.style.display = "none";
   });
+});
+
+// 배경색 변경 함수
+// 배경색 변경 함수
+function changeBackgroundColor() {
+  const wrap = document.querySelector(".wrap");
+  const currentColor = wrap.style.backgroundColor;
+  wrap.style.backgroundColor = currentColor === "skyblue" ? "navy" : "skyblue";
+
+  // 배경색에 따라 .myRoom 요소에 필터 적용
+  const myRoom = document.querySelector(".myRoom");
+  if (wrap.style.backgroundColor === "navy") {
+    myRoom.style.filter = "brightness(0.8)";
+  } else {
+    myRoom.style.filter = "brightness(1)";
+  }
+}
+
+// 30초마다 배경색 변경
+setInterval(changeBackgroundColor, 20000);
+
+// 페이지 로드 시 초기 배경색 설정
+document.addEventListener("DOMContentLoaded", () => {
+  const wrap = document.querySelector(".wrap");
+  wrap.style.backgroundColor = "skyblue";
 });

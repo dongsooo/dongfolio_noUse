@@ -14,9 +14,6 @@ img {
 }
 
 /* 스타일 */
-body {
-  background-color: tomato;
-}
 
 .wrap {
   width: 100%;
@@ -25,6 +22,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: tomato; */
+
+  transition: background-color 1s ease;
 }
 
 .myRoom {
