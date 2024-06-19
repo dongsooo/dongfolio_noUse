@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* 스타일 */
+body {
+  background-color: tomato;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myRoom {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  margin: 0 1em;
+}
+
+.myRoom img:first-child {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.myRoom > a {
+  display: block;
+}
+
+.myRoom > a > img {
+  position: absolute;
+}
+
+/* .phoneHover {
+  position: absolute;
+  width: 30%;
+  top: 30%;
+  left: -32%;
+  display: none; 
+
+  z-index: 10;
+  max-width: 100%;
+} */
+
+.bikeHover,
+.paperHover,
+.notebookHover,
+.gamepadHover,
+.phoneHover {
+  position: absolute;
+  width: 25%;
+  top: 45%;
+  right: 4%;
+  display: none;
+  z-index: 10;
+  max-width: 100%;
+}
+
+.notebookAtag:hover .notebookHover {
+  display: block; /* 또는 visibility: visible; */
+}
+
+.notebookAtag:hover,
+.phoneAtag:hover,
+.paperAtag:hover,
+.gamepad:hover {
+  transform: scale(1.15);
+  animation: none;
+}
+
+.bikeAtag:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+.notebookAtag {
+  max-width: 100%;
+  width: 10%;
+  height: auto;
+  position: absolute;
+  top: 37%;
+  left: 30%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bikeAtag {
+  max-width: 100%;
+  width: 25%;
+  height: auto;
+  position: absolute;
+  top: 66%;
+  left: 45%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.phoneAtag {
+  max-width: 100%;
+  width: 6%;
+  height: auto;
+  position: absolute;
+  top: 47%;
+  left: 55%;
+  cursor: pointer;
+}
+
+.paperAtag {
+  max-width: 100%;
+  width: 9%;
+  height: auto;
+  position: absolute;
+  top: 57%;
+  left: 81%;
+  cursor: pointer;
+}
+
+.gamepadAtag {
+  max-width: 100%;
+  width: 5%;
+  height: auto;
+  position: absolute;
+  top: 71.5%;
+  left: 33.5%;
+  cursor: pointer;
+}
+
+.myRoom img:nth-child(6) {
+  max-width: 100%;
+  width: 9%;
+  height: auto;
+  position: absolute;
+  top: 42%;
+  left: 61%;
+}
+
+/* 애니메이션 */
+@keyframes scale {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(0.7);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes scale2 {
+  0% {
+    filter: brightness(0.7);
+  }
+
+  50% {
+    filter: brightness(1);
+  }
+
+  100% {
+    filter: brightness(0.7);
+  }
+}
+
+.notebook,
+.paper,
+.gamepadAtag {
+  animation: scale 1.5s ease-in-out infinite;
+}
+
+.phone,
+.bike {
+  animation: scale2 1.5s ease-in-out infinite;
+}
