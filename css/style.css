@@ -101,7 +101,6 @@ body {
   top: 37%;
   left: 30%;
   cursor: pointer;
-  z-index: 10;
 }
 
 .bikeAtag {
@@ -112,7 +111,6 @@ body {
   top: 66%;
   left: 45%;
   cursor: pointer;
-  z-index: 10;
 }
 
 .phoneAtag {
@@ -133,6 +131,8 @@ body {
   top: 57%;
   left: 81%;
   cursor: pointer;
+
+  display: block;
 }
 
 .gamepadAtag {
@@ -193,3 +193,104 @@ body {
 .bike {
   animation: scale2 1.5s ease-in-out infinite;
 }
+
+.myIntroduce {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.631);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.myIntroduceContent {
+  width: 50%;
+  height: 90vh;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.myIntroduceContent_xBox {
+  text-align: end;
+}
+
+.xMark {
+  font-size: 1.5em;
+
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.myIntroduceContent_titleBox {
+  width: 100%;
+}
+
+.myIntroduceContent_titleBox > p {
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.myIntroduceContent_textBox {
+  width: 95%;
+  height: 83%;
+  margin: 0 auto;
+  margin-top: 1em;
+  border: 4px solid black;
+}
+
+.textTopbox {
+  width: 100%;
+  display: flex;
+}
+
+.pictureBox {
+  width: 20%;
+  max-width: 20%;
+  height: 10vw;
+  /* background-color: white; */
+  background-image: url(/img/favicon.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0.5em;
+}
+
+.myInfoBox {
+  flex-grow: 1;
+  /* background-color: white; */
+  margin: 0.5em;
+  margin-left: 0;
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+}
+
+.myInfoBox p {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.bottomBox {
+  width: 100%;
+  height: 70%;
+}
+
+.bottomSkillBox {
+  width: 100%;
+
+  height: 100%;
+}
+
+/* #myBarChart {
+  max-width: 1000px;
+  width: 80%; 
+
+  margin: auto; 
+} */

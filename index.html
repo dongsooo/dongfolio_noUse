@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>동트폴리오</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6f28eeda7c.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="apple-touch-icon"
@@ -140,12 +146,38 @@
           src="img/01_bike_hover.png"
           alt="자전거 텍스트 상자"
         />
-        <img
+        <!-- <img
           class="paperHover"
           src="img/01_paper_hover.png"
           alt="종이 텍스트 상자"
-        />
+        /> -->
         <img class="gamepadHover" src="img/01_gamepad_hover.png" alt="" />
+      </div>
+      <div class="myIntroduce">
+        <div class="myIntroduceContent">
+          <div class="myIntroduceContent_xBox">
+            <i class="fa-solid fa-xmark xMark"></i>
+          </div>
+          <div class="myIntroduceContent_titleBox">
+            <p>About me</p>
+          </div>
+          <div class="myIntroduceContent_textBox">
+            <div class="textTopbox">
+              <div class="pictureBox"></div>
+              <div class="myInfoBox">
+                <p>이름 : 김동수</p>
+                <p>생년월일 : 1989.10.8</p>
+                <p>핸드폰 : 010-3765-9984</p>
+                <p>이메일 : ehdtn8910@naver.com</p>
+              </div>
+            </div>
+            <div class="bottomBox">
+              <div class="bottomSkillBox">
+                <canvas id="myBarChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
