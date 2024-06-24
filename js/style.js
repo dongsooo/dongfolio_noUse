@@ -1,21 +1,51 @@
+let hoverListeners = [];
+
 function addHoverEffect(atagClass, hoverClass) {
   const atag = document.querySelector(atagClass);
   const hoverElement = document.querySelector(hoverClass);
 
-  atag.addEventListener("mouseover", function () {
-    hoverElement.style.display = "block";
-  });
+  if (!atag || !hoverElement) return; // 요소가 없을 경우 반환
 
-  atag.addEventListener("mouseout", function () {
+  const mouseOverListener = function () {
+    hoverElement.style.display = "block";
+  };
+
+  const mouseOutListener = function () {
     hoverElement.style.display = "none";
-  });
+  };
+
+  atag.addEventListener("mouseover", mouseOverListener);
+  atag.addEventListener("mouseout", mouseOutListener);
+
+  hoverListeners.push({ atag, mouseOverListener, mouseOutListener });
 }
 
-addHoverEffect(".notebookAtag", ".notebookHover");
-addHoverEffect(".phoneAtag", ".phoneHover");
-addHoverEffect(".bikeAtag", ".bikeHover");
-addHoverEffect(".paperAtag", ".paperHover");
-addHoverEffect(".gamepadAtag", ".gamepadHover");
+function initializeHoverEffects() {
+  if (window.innerWidth > 1023) {
+    addHoverEffect(".notebookAtag", ".notebookHover");
+    addHoverEffect(".phoneAtag", ".phoneHover");
+    addHoverEffect(".bikeAtag", ".bikeHover");
+    addHoverEffect(".paperAtag", ".paperHover");
+    addHoverEffect(".gamepadAtag", ".gamepadHover");
+  }
+}
+
+function removeHoverEffects() {
+  hoverListeners.forEach(({ atag, mouseOverListener, mouseOutListener }) => {
+    atag.removeEventListener("mouseover", mouseOverListener);
+    atag.removeEventListener("mouseout", mouseOutListener);
+  });
+  hoverListeners = [];
+}
+
+// 페이지 로드 시 호버 효과 초기화
+initializeHoverEffects();
+
+// 윈도우 크기 조절 시 다시 확인하여 동적으로 호버 효과 추가/제거
+window.addEventListener("resize", function () {
+  removeHoverEffects();
+  initializeHoverEffects();
+});
 
 // --------
 function openNewWindow(url) {
