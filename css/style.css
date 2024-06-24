@@ -248,7 +248,7 @@ img {
 .textTopbox {
   width: 100%;
   display: flex;
-  background-color: red;
+
   justify-content: center;
   align-items: center;
 }
