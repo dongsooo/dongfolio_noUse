@@ -17,6 +17,7 @@ addHoverEffect(".bikeAtag", ".bikeHover");
 addHoverEffect(".paperAtag", ".paperHover");
 addHoverEffect(".gamepadAtag", ".gamepadHover");
 
+// --------
 function openNewWindow(url) {
   // 새 창의 너비와 높이를 설정합니다.
   let newWindow = window.open(url, "_blank", "width=360,height=740");

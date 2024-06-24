@@ -248,14 +248,14 @@ img {
 .textTopbox {
   width: 100%;
   display: flex;
-  /* background-color: red; */
+  background-color: red;
   justify-content: center;
   align-items: center;
 }
 
 .pictureBox {
   width: 20%;
-  max-width: 20%;
+  /* max-width: 20%; */
   height: 10vw;
 
   background-image: url(../img/favicon.png);
@@ -299,3 +299,21 @@ img {
 
   margin: auto; 
 } */
+
+@media all and (max-width: 1023px) {
+  .pictureBox {
+    width: 30%;
+  }
+  .myInfoBox p {
+    font-size: 0.7em;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .pictureBox {
+    width: 30%;
+  }
+  .myInfoBox p {
+    font-size: 0.4em;
+  }
+}
