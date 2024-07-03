@@ -27,7 +27,6 @@ function initializeHoverEffects() {
     addHoverEffect(".bikeAtag", ".bikeHover");
     addHoverEffect(".paperAtag", ".paperHover");
     addHoverEffect(".gamepadAtag", ".gamepadHover");
-    addHoverEffect(".cardAtag", ".cardHover");
   }
 }
 
