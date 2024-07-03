@@ -76,6 +76,16 @@ img {
   max-width: 100%;
 }
 
+.cardHover {
+  position: absolute;
+  width: 25%;
+  top: 42%;
+  right: 37%;
+  display: none;
+  z-index: 10;
+  max-width: 100%;
+}
+
 .notebookAtag:hover .notebookHover {
   display: block; /* 또는 visibility: visible; */
 }
@@ -83,7 +93,8 @@ img {
 .notebookAtag:hover,
 .phoneAtag:hover,
 .paperAtag:hover,
-.gamepad:hover {
+.gamepad:hover,
+.cardAtag:hover {
   transform: scale(1.15);
   animation: none;
 }
@@ -145,6 +156,16 @@ img {
   cursor: pointer;
 }
 
+.cardAtag {
+  max-width: 100%;
+  width: 5%;
+  height: auto;
+  position: absolute;
+  top: 56.5%;
+  left: 77.5%;
+  cursor: pointer;
+}
+
 .myRoom img:nth-child(6) {
   max-width: 100%;
   width: 9%;
@@ -190,7 +211,8 @@ img {
 }
 
 .phone,
-.bike {
+.bike,
+.cardAtag {
   animation: scale2 1.5s ease-in-out infinite;
 }
 
