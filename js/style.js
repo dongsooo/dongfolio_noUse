@@ -228,3 +228,5 @@ function updateActiveSlide() {
 
 // 페이지 로드 시 초기 상태 설정
 addClickListeners();
+
+// a태그 활성화 관련 함수
