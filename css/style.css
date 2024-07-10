@@ -368,7 +368,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 5%;
+  bottom: 0%;
 }
 
 #myBarChart {
@@ -651,8 +651,39 @@ body {
 .section3 {
   width: 100%;
   height: auto;
-  background-color: salmon;
+  background-color: rgb(213, 198, 183);
   position: relative;
+}
+
+.section3-content-box {
+  display: flex;
+  padding-left: 5em;
+}
+
+.section3-content_left-box,
+.section3-content_right-box {
+  display: flex;
+  flex: 1;
+}
+
+.section3-content_left-box {
+  border: 1px solid red;
+}
+
+.section3-introduce-box {
+  background-color: white;
+  width: 50%;
+  border-radius: 15px;
+}
+
+.section3-item-box {
+  display: flex;
+  padding: 20px 20px;
+  align-items: center;
+  justify-content: start;
+  background-color: rgb(229, 210, 192);
+  margin: 25px;
+  border-radius: 15px;
 }
 /* 섹션3 끝 */
 
@@ -720,9 +751,9 @@ body {
     text-align: start;
   }
 
-  .textTopbox {
+  /* .textTopbox {
     flex-direction: column;
-  }
+  } */
 
   .textTopbox {
     padding-top: 0.2em;
