@@ -62,6 +62,7 @@ function openNewWindow(url) {
   }
 }
 
+// 그래프 관련 함수
 let skillData = [70, 60, 50, 45]; // 숙련도 데이터
 
 // Canvas 요소 가져오기

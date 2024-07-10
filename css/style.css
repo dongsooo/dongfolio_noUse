@@ -272,6 +272,7 @@ body {
   left: 0;
   overflow: hidden;
   display: none;
+  min-width: 360px;
 }
 
 .myIntroduceContent {
@@ -312,6 +313,7 @@ body {
   margin: 0 auto;
   margin-top: 1em;
   border: 4px solid black;
+  position: relative;
 }
 
 .textTopbox {
@@ -320,12 +322,14 @@ body {
 
   justify-content: center;
   align-items: center;
+
+  padding-top: 2em;
 }
 
 .pictureBox {
-  width: 20%;
+  width: 120px;
   /* max-width: 20%; */
-  height: 10vw;
+  height: 150px;
 
   background-image: url(../img/favicon.png);
   background-size: contain;
@@ -354,12 +358,22 @@ body {
 .bottomBox {
   width: 100%;
   height: 70%;
+
+  position: absolute;
+  bottom: 0;
 }
 
 .bottomSkillBox {
   width: 100%;
+  /* background-color: red; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
 
-  height: 100%;
+#myBarChart {
+  height: 800px;
 }
 
 /* #myBarChart {
@@ -396,6 +410,8 @@ body {
 }
 
 /* 섹션1 끝 */
+
+/* 섹션2 시작 */
 .section2 {
   width: 100%;
   height: auto;
@@ -630,22 +646,24 @@ body {
   color: salmon;
 }
 
-/* 섹션2 시작 */
-
 /* 섹션2 끝 */
 
-/* 섹션3 */
+/* 섹션3 시작*/
 .section3 {
   width: 100%;
   height: auto;
   background-color: salmon;
   position: relative;
 }
+/* 섹션3 끝 */
 
+/* 팝업 시작 */
+
+/* 팝업 끝 */
 /* 미디어쿼리  */
 @media all and (max-width: 1023px) {
   .pictureBox {
-    width: 30%;
+    width: 120px;
   }
   .myInfoBox p {
     font-size: 0.7em;
@@ -701,11 +719,13 @@ body {
 
     text-align: start;
   }
-}
 
-@media all and (max-width: 767px) {
-  .pictureBox {
-    width: 30%;
+  .textTopbox {
+    flex-direction: column;
+  }
+
+  .textTopbox {
+    padding-top: 0.2em;
   }
   .myInfoBox p {
     font-size: 0.4em;
