@@ -439,8 +439,8 @@ a {
 }
 
 .swiper-container {
-  /* background-color: red; */
-  height: 800px;
+  background-color: red;
+  height: 700px;
   width: 100%;
 
   box-sizing: border-box;
@@ -448,7 +448,7 @@ a {
 }
 
 .swiper-wrapper {
-  height: 800px;
+  height: 100%;
   margin-top: 2em;
   box-sizing: border-box;
 
@@ -582,14 +582,14 @@ a {
 
 .swiper-button-prev {
   left: 45%;
-  top: 82%;
+  top: 90%;
 
   transform: translateX(-50%);
 }
 
 .swiper-button-next {
   left: 55%;
-  top: 82%;
+  top: 90%;
   transform: translateX(-50%);
 }
 
