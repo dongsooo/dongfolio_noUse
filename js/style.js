@@ -195,4 +195,36 @@ var swiper = new Swiper(".swiper-container", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  on: {
+    init: addClickListeners, // Swiper 초기화 시 클릭 리스너 추가
+    slideChange: updateActiveSlide, // 슬라이드 변경 시 활성화 슬라이드 업데이트
+  },
 });
+
+//
+function addClickListeners() {
+  const slides = document.querySelectorAll(".swiper-slide");
+
+  slides.forEach((slide) => {
+    slide.addEventListener("click", handleSlideClick);
+  });
+}
+
+// 클릭 이벤트 핸들러
+function handleSlideClick(event) {
+  const clickedSlide = event.currentTarget;
+  const activeIndex = swiper.activeIndex;
+  const clickedIndex = Array.from(swiper.slides).indexOf(clickedSlide);
+
+  if (clickedIndex !== activeIndex) {
+    swiper.slideTo(clickedIndex); // 클릭된 슬라이드를 활성화
+  }
+}
+
+// 슬라이드 변경 시 활성화 슬라이드 업데이트
+function updateActiveSlide() {
+  // 필요시 여기에 추가적인 로직을 삽입할 수 있습니다.
+}
+
+// 페이지 로드 시 초기 상태 설정
+addClickListeners();
