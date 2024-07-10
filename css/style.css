@@ -391,8 +391,10 @@ body {
 }
 
 .mobile-text {
+  text-align: center;
   display: none;
 }
+
 /* 섹션1 끝 */
 .section2 {
   width: 100%;
@@ -430,6 +432,10 @@ body {
   font-weight: bold;
   margin-top: 0.5em;
   letter-spacing: -2px;
+}
+
+.section2-text-box p:last-child {
+  font-size: 3em;
 }
 
 .section2-swiper-box {
@@ -665,6 +671,17 @@ body {
     transform: scale(0.95);
   }
 
+  .section2-text-wrap {
+    padding-left: 0;
+  }
+
+  .text-box {
+    padding-left: 0;
+  }
+
+  .text-box p {
+    text-align: center;
+  }
   .section2-title-box > h3 {
     margin: 0 auto;
     padding-top: 1em;
