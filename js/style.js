@@ -140,6 +140,10 @@ let myBarChart = new Chart(ctx, {
   },
 });
 
+//
+
+// 호버 이벤트 함수
+
 document.addEventListener("DOMContentLoaded", function () {
   const paperAtag = document.querySelector(".paperAtag");
   const xMark = document.querySelector(".xMark");
