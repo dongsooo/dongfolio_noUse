@@ -140,7 +140,49 @@ let myBarChart = new Chart(ctx, {
   },
 });
 
-//
+//그래프 함수2
+let ctx2 = document.getElementById("myChart2").getContext("2d");
+var myChart = new Chart(ctx2, {
+  type: "bar",
+  data: {
+    labels: ["HTML+CSS", "JavaScript", "Jquery", "React"],
+    datasets: [
+      {
+        label: "숙련도", // 레이블 비움
+        data: skillData, // 각 막대의 데이터 값
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.7)", // 막대 색상
+          "rgba(54, 162, 235, 0.7)",
+          "rgba(255, 206, 86, 0.7)",
+          "rgba(75, 192, 192, 0.7)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)", // 막대 테두리 색상
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+        ],
+        borderWidth: 1, // 막대 테두리 두께
+      },
+    ],
+  },
+  options: {
+    indexAxis: "y", // 가로 막대 차트로 변경
+    plugins: {
+      legend: {
+        display: false, // 범례 비활성화
+      },
+      title: {
+        display: false, // 제목 비활성화
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
 
 // 호버 이벤트 함수
 
