@@ -100,6 +100,11 @@ body {
   max-width: 100%;
 }
 
+.card {
+  background-color: transparent;
+  border: none;
+}
+
 .cardHover,
 .cupHover {
   position: absolute;
@@ -684,14 +689,38 @@ body {
 
 .section3-item-box {
   display: flex;
-  padding: 20px 20px;
+  padding: 10px 20px;
   align-items: center;
   justify-content: start;
   background-color: rgb(245, 233, 221);
   margin: 25px;
   border-radius: 15px;
-  color: rgb(48, 48, 48);
+
   /* font-family: "Pretendard Variable"; */
+}
+
+.section3-item-box > p {
+  color: #555555;
+  margin-bottom: 0;
+}
+
+.section3-tooltip-box {
+  display: flex;
+  gap: 20px;
+  padding: 10px 40px;
+
+  align-items: center;
+  justify-content: end;
+}
+
+.custom-tooltip {
+  background-color: white;
+}
+
+.section3-tooltip-box > p {
+  font-size: 3em;
+  text-align: end;
+  color: rgb(245, 233, 221);
 }
 
 .section3-content_right-box {

@@ -276,4 +276,10 @@ function updateActiveSlide() {
 // 페이지 로드 시 초기 상태 설정
 addClickListeners();
 
-// a태그 활성화 관련 함수
+// 부트스트랩 툴팁
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+const tooltipList = [...tooltipTriggerList].map(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
