@@ -105,6 +105,19 @@ body {
   border: none;
 }
 
+.room,
+.notebook,
+.bike,
+.phone,
+.man,
+.gamepad,
+.card,
+.cup,
+.dog {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
 .cardHover,
 .cupHover {
   position: absolute;
@@ -326,7 +339,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding-top: 0.7em;
 }
 
@@ -395,6 +407,8 @@ body {
   flex-direction: column;
   color: white;
   padding-left: 20px;
+  transition: all 0.5 ease;
+  opacity: 1;
 }
 
 .text-box h1 {
@@ -737,6 +751,8 @@ body {
 
 .stand-man {
   width: 70%;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .section3-graph-box {

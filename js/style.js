@@ -283,3 +283,60 @@ const tooltipTriggerList = document.querySelectorAll(
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+
+// 스크롤 애니메이션
+function logPaperPosition() {
+  // .paper 요소를 선택합니다.
+  const bikeElement = document.querySelector(".bike");
+  const notebookElement = document.querySelector(".notebook");
+  const phoneElement = document.querySelector(".phone");
+  const paperElement = document.querySelector(".paper");
+  const gamepadElement = document.querySelector(".gamepad");
+  const cardElement = document.querySelector(".card");
+  const cupElement = document.querySelector(".cup");
+  const manElement = document.querySelector(".man");
+  const dogElement = document.querySelector(".dog");
+  const roomElement = document.querySelector(".room");
+  const standElement = document.querySelector(".stand-man");
+
+  const cupRect = cupElement.getBoundingClientRect();
+  const bikeRect = bikeElement.getBoundingClientRect();
+
+  if (cupRect.top <= 0) {
+    manElement.style.opacity = "0";
+  } else {
+    manElement.style.opacity = "1";
+  }
+
+  if (bikeRect.top <= 0) {
+    bikeElement.style.opacity = "0";
+    notebookElement.style.opacity = "0";
+    phoneElement.style.opacity = "0";
+    paperElement.style.opacity = "0";
+    gamepadElement.style.opacity = "0";
+    cardElement.style.opacity = "0";
+    dogElement.style.opacity = "0";
+    cupElement.style.opacity = "0";
+    roomElement.style.opacity = "0";
+
+    standElement.style.opacity = "1";
+  } else {
+    bikeElement.style.opacity = "1";
+    notebookElement.style.opacity = "1";
+    phoneElement.style.opacity = "1";
+    paperElement.style.opacity = "1";
+    gamepadElement.style.opacity = "1";
+    cardElement.style.opacity = "1";
+    dogElement.style.opacity = "1";
+    cupElement.style.opacity = "1";
+    roomElement.style.opacity = "1";
+
+    standElement.style.opacity = "0";
+  }
+}
+
+// 스크롤 이벤트가 발생할 때마다 logPaperPosition 함수를 호출합니다.
+window.addEventListener("scroll", logPaperPosition);
+
+// 페이지 로드 시 초기 위치를 출력합니다.
+window.addEventListener("load", logPaperPosition);
