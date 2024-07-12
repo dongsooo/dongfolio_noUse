@@ -63,7 +63,7 @@ function openNewWindow(url) {
 }
 
 // 그래프 관련 함수
-let skillData = [70, 60, 50, 45]; // 숙련도 데이터
+let skillData = [70, 60, 50, 45, 55, 60]; // 숙련도 데이터
 
 // Canvas 요소 가져오기
 let ctx = document.getElementById("myBarChart").getContext("2d");
@@ -75,7 +75,7 @@ let animationComplete = false;
 let myBarChart = new Chart(ctx, {
   type: "bar", // 그래프 유형: 막대 그래프
   data: {
-    labels: ["HTML+CSS", "JavaScript", "Jquery", "React"], // X 축 레이블
+    labels: ["HTML+CSS", "JavaScript", "Jquery", "React", "Bootstrap", "SCSS"], // X 축 레이블
     datasets: [
       {
         label: "숙련도", // 레이블 비움
@@ -85,12 +85,16 @@ let myBarChart = new Chart(ctx, {
           "rgba(54, 162, 235, 0.7)",
           "rgba(255, 206, 86, 0.7)",
           "rgba(75, 192, 192, 0.7)",
+          "rgba(255, 102, 102, 0.7)",
+          "rgba(255, 203, 153, 0.7)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)", // 막대 테두리 색상
           "rgba(54, 162, 235, 1)",
           "rgba(255, 206, 86, 1)",
           "rgba(75, 192, 192, 1)",
+          "rgba(255, 102, 102, 1)",
+          "rgba(255, 203, 153, 1)",
         ],
         borderWidth: 1, // 막대 테두리 두께
       },
@@ -145,7 +149,7 @@ let ctx2 = document.getElementById("myChart2").getContext("2d");
 var myChart = new Chart(ctx2, {
   type: "bar",
   data: {
-    labels: ["HTML+CSS", "JavaScript", "Jquery", "React"],
+    labels: ["HTML+CSS", "JavaScript", "Jquery", "React", "Bootstrap", "SCSS"],
     datasets: [
       {
         label: "숙련도", // 레이블 비움
@@ -154,13 +158,17 @@ var myChart = new Chart(ctx2, {
           "rgba(255, 99, 132, 0.7)", // 막대 색상
           "rgba(54, 162, 235, 0.7)",
           "rgba(255, 206, 86, 0.7)",
-          "rgba(75, 192, 192, 0.7)",
+          "rgba(75, 192, 192,0.7)",
+          "rgba(255, 102, 102, 0.7)",
+          "rgba(255, 203, 153, 0.7)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)", // 막대 테두리 색상
           "rgba(54, 162, 235, 1)",
           "rgba(255, 206, 86, 1)",
           "rgba(75, 192, 192, 1)",
+          "rgba(255, 102, 102, 1)",
+          "rgba(255, 203, 153, 1)",
         ],
         borderWidth: 1, // 막대 테두리 두께
       },
@@ -287,52 +295,38 @@ const tooltipList = [...tooltipTriggerList].map(
 // 스크롤 애니메이션
 function logPaperPosition() {
   // .paper 요소를 선택합니다.
-  const bikeElement = document.querySelector(".bike");
-  const notebookElement = document.querySelector(".notebook");
-  const phoneElement = document.querySelector(".phone");
-  const paperElement = document.querySelector(".paper");
-  const gamepadElement = document.querySelector(".gamepad");
-  const cardElement = document.querySelector(".card");
-  const cupElement = document.querySelector(".cup");
-  const manElement = document.querySelector(".man");
-  const dogElement = document.querySelector(".dog");
-  const roomElement = document.querySelector(".room");
-  const standElement = document.querySelector(".stand-man");
+  const elementsToHide = [
+    document.querySelector(".bike"),
+    document.querySelector(".notebook"),
+    document.querySelector(".phone"),
+    document.querySelector(".paper"),
+    document.querySelector(".gamepad"),
+    document.querySelector(".card"),
+    document.querySelector(".dog"),
+    document.querySelector(".cup"),
+    document.querySelector(".room"),
+  ];
 
+  const standElement = document.querySelector(".stand-man");
+  const bikeElement = document.querySelector(".bike");
+  const cupElement = document.querySelector(".cup");
+
+  // 요소의 위치를 가져옵니다.
   const cupRect = cupElement.getBoundingClientRect();
   const bikeRect = bikeElement.getBoundingClientRect();
 
-  if (cupRect.top <= 0) {
-    manElement.style.opacity = "0";
-  } else {
-    manElement.style.opacity = "1";
-  }
+  // .cup의 위치에 따라 .man의 opacity를 조정합니다.
+  document.querySelector(".man").style.opacity = cupRect.top <= 0 ? "0" : "1";
 
-  if (bikeRect.top <= 0) {
-    bikeElement.style.opacity = "0";
-    notebookElement.style.opacity = "0";
-    phoneElement.style.opacity = "0";
-    paperElement.style.opacity = "0";
-    gamepadElement.style.opacity = "0";
-    cardElement.style.opacity = "0";
-    dogElement.style.opacity = "0";
-    cupElement.style.opacity = "0";
-    roomElement.style.opacity = "0";
+  // bike의 위치에 따라 여러 요소의 opacity를 조정합니다.
+  const opacity = bikeRect.top <= 0 ? "0" : "1";
 
-    standElement.style.opacity = "1";
-  } else {
-    bikeElement.style.opacity = "1";
-    notebookElement.style.opacity = "1";
-    phoneElement.style.opacity = "1";
-    paperElement.style.opacity = "1";
-    gamepadElement.style.opacity = "1";
-    cardElement.style.opacity = "1";
-    dogElement.style.opacity = "1";
-    cupElement.style.opacity = "1";
-    roomElement.style.opacity = "1";
+  elementsToHide.forEach((element) => {
+    element.style.opacity = opacity;
+  });
 
-    standElement.style.opacity = "0";
-  }
+  // .stand-man의 opacity를 bike의 위치에 따라 조정합니다.
+  standElement.style.opacity = bikeRect.top <= 0 ? "1" : "0";
 }
 
 // 스크롤 이벤트가 발생할 때마다 logPaperPosition 함수를 호출합니다.
