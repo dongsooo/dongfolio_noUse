@@ -63,7 +63,7 @@ function openNewWindow(url) {
 }
 
 // 그래프 관련 함수
-let skillData = [70, 60, 50, 45, 55, 60]; // 숙련도 데이터
+let skillData = [80, 60, 50, 45, 55, 60, 70, 55]; // 숙련도 데이터
 
 // Canvas 요소 가져오기
 let ctx = document.getElementById("myBarChart").getContext("2d");
@@ -75,7 +75,16 @@ let animationComplete = false;
 let myBarChart = new Chart(ctx, {
   type: "bar", // 그래프 유형: 막대 그래프
   data: {
-    labels: ["HTML+CSS", "JavaScript", "Jquery", "React", "Bootstrap", "SCSS"], // X 축 레이블
+    labels: [
+      "HTML+CSS",
+      "JavaScript",
+      "Jquery",
+      "React",
+      "Bootstrap",
+      "SCSS",
+      "Tailwind",
+      "TypeScript",
+    ], // X 축 레이블
     datasets: [
       {
         label: "숙련도", // 레이블 비움
@@ -87,6 +96,8 @@ let myBarChart = new Chart(ctx, {
           "rgba(75, 192, 192, 0.7)",
           "rgba(255, 102, 102, 0.7)",
           "rgba(255, 203, 153, 0.7)",
+          "rgba(152, 125, 154, 0.7)",
+          "rgba(125, 138, 188, 0.7)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)", // 막대 테두리 색상
@@ -95,6 +106,8 @@ let myBarChart = new Chart(ctx, {
           "rgba(75, 192, 192, 1)",
           "rgba(255, 102, 102, 1)",
           "rgba(255, 203, 153, 1)",
+          "rgba(152, 125, 154, 1)",
+          "rgba(125, 138, 188, 1)",
         ],
         borderWidth: 1, // 막대 테두리 두께
       },
@@ -149,7 +162,16 @@ let ctx2 = document.getElementById("myChart2").getContext("2d");
 var myChart = new Chart(ctx2, {
   type: "bar",
   data: {
-    labels: ["HTML+CSS", "JavaScript", "Jquery", "React", "Bootstrap", "SCSS"],
+    labels: [
+      "HTML+CSS",
+      "JavaScript",
+      "Jquery",
+      "React",
+      "Bootstrap",
+      "SCSS",
+      "Tailwind",
+      "TypeScript",
+    ],
     datasets: [
       {
         label: "숙련도", // 레이블 비움
@@ -161,6 +183,8 @@ var myChart = new Chart(ctx2, {
           "rgba(75, 192, 192,0.7)",
           "rgba(255, 102, 102, 0.7)",
           "rgba(255, 203, 153, 0.7)",
+          "rgba(152, 125, 154, 0.7)",
+          "rgba(125, 138, 188, 0.7)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)", // 막대 테두리 색상
@@ -169,6 +193,8 @@ var myChart = new Chart(ctx2, {
           "rgba(75, 192, 192, 1)",
           "rgba(255, 102, 102, 1)",
           "rgba(255, 203, 153, 1)",
+          "rgba(152, 125, 154, 1)",
+          "rgba(125, 138, 188, 1)",
         ],
         borderWidth: 1, // 막대 테두리 두께
       },
