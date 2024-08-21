@@ -44,12 +44,12 @@ function removeHoverEffects() {
 }
 
 // 페이지 로드 시 호버 효과 초기화
-initializeHoverEffects();
+// initializeHoverEffects();
 
 // 윈도우 크기 조절 시 다시 확인하여 동적으로 호버 효과 추가/제거
 window.addEventListener("resize", function () {
   removeHoverEffects();
-  initializeHoverEffects();
+  // initializeHoverEffects();
 });
 
 // --------
