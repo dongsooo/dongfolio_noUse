@@ -268,7 +268,7 @@ var swiper = new Swiper(".swiper-container", {
   slidesPerView: "auto",
   // slidesPerView: 5,
   spaceBetween: 60,
-  initialSlide: 2,
+  initialSlide: 3,
   centeredSlides: true,
   loop: false,
 
