@@ -227,8 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   paperAtag.addEventListener("click", function (event) {
     event.preventDefault();
-    myIntroduce.style.display = "block";
-    document.body.style.overflow = "hidden"; // 스크롤 막기
+    // myIntroduce.style.display = "block";
+    // document.body.style.overflow = "hidden";
   });
 
   xMark.addEventListener("click", function () {

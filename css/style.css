@@ -149,7 +149,6 @@ body {
 
 .notebookAtag:hover,
 .phoneAtag:hover,
-.paperAtag:hover,
 .gamepad:hover,
 .cardAtag:hover,
 .cupAtag:hover {
@@ -197,8 +196,8 @@ body {
   width: 9%;
   height: auto;
   position: absolute;
-  top: 57%;
-  left: 81%;
+  top: 56%;
+  left: 79%;
   cursor: pointer;
 
   display: block;
@@ -283,7 +282,6 @@ body {
 }
 
 .notebook,
-.paper,
 .gamepadAtag,
 .cupAtag {
   animation: scale 1.5s ease-in-out infinite;
