@@ -201,7 +201,7 @@ var myChart = new Chart(ctx2, {
     ],
   },
   options: {
-    indexAxis: "y", // 가로 막대 차트로 변경
+    indexAxis: "x", // 가로 막대 차트로 변경
     plugins: {
       legend: {
         display: false, // 범례 비활성화
@@ -334,18 +334,17 @@ function logPaperPosition() {
   ];
 
   const standElement = document.querySelector(".stand-man");
-  const bikeElement = document.querySelector(".bike");
-  const cupElement = document.querySelector(".cup");
+
+  const cupElement = document.querySelector(".notebook");
 
   // 요소의 위치를 가져옵니다.
   const cupRect = cupElement.getBoundingClientRect();
-  const bikeRect = bikeElement.getBoundingClientRect();
 
   // .cup의 위치에 따라 .man의 opacity를 조정합니다.
   document.querySelector(".man").style.opacity = cupRect.top <= 0 ? "0" : "1";
 
   // .stand-man의 opacity를 bike의 위치에 따라 조정합니다.
-  standElement.style.opacity = bikeRect.top <= 0 ? "1" : "0";
+  standElement.style.opacity = cupRect.top <= 0 ? "1" : "0";
 }
 
 // 스크롤 이벤트가 발생할 때마다 logPaperPosition 함수를 호출합니다.

@@ -866,6 +866,7 @@ body {
     font-size: 1em;
     margin: 0;
   }
+
   .section3-content-box {
     flex-direction: column;
     padding: 0 20px;
@@ -881,6 +882,21 @@ body {
   .section3-content_left-box {
     flex-direction: column;
     order: 2;
+  }
+
+  .section3 {
+    top: 100px;
+  }
+
+  .section2 {
+    top: 100px;
+  }
+}
+
+@media (max-width: 715px) {
+  .section1 {
+    height: 80vh;
+    justify-content: baseline;
   }
 }
 
