@@ -344,13 +344,6 @@ function logPaperPosition() {
   // .cup의 위치에 따라 .man의 opacity를 조정합니다.
   document.querySelector(".man").style.opacity = cupRect.top <= 0 ? "0" : "1";
 
-  // bike의 위치에 따라 여러 요소의 opacity를 조정합니다.
-  const opacity = bikeRect.top <= 0 ? "0" : "1";
-
-  elementsToHide.forEach((element) => {
-    element.style.opacity = opacity;
-  });
-
   // .stand-man의 opacity를 bike의 위치에 따라 조정합니다.
   standElement.style.opacity = bikeRect.top <= 0 ? "1" : "0";
 }
