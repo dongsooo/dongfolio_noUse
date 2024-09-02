@@ -881,7 +881,11 @@ body {
 
 /* 스케줄러 */
 .wholeWrap {
-  font-family: "Arial", sans-serif;
+  font-family: "Do Hyeon", "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
   background-color: #f4f4f4b2;
   display: flex;
   justify-content: center;
@@ -1017,11 +1021,15 @@ ul {
   list-style-type: none;
   padding: 0;
   margin-top: 20px;
+  overflow-y: scroll;
+  height: 336px;
 }
 
-#todo-list {
-  overflow-y: scroll;
-  height: 100px;
+@media (max-width: 715px) {
+  #todo-list {
+    overflow-y: scroll;
+    height: 100px;
+  }
 }
 
 li {
