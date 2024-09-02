@@ -28,6 +28,7 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
+
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -176,29 +177,9 @@
           <a class="dogAtag" href="#">
             <img class="dog" src="img/00_dog_img.png" alt="" />
           </a>
-          <img
-            class="notebookHover"
-            src="img/01_notebook_hover2.png"
-            alt="노트북 텍스트 상자"
-          />
-          <img
-            class="phoneHover"
-            src="img/01_phone_hover.png"
-            alt="핸드폰 텍스트 상자"
-          />
-          <img
-            class="bikeHover"
-            src="img/01_bike_hover.png"
-            alt="자전거 텍스트 상자"
-          />
-          <!-- <img
-            class="paperHover"
-            src="img/01_paper_hover.png"
-            alt="종이 텍스트 상자"
-          /> -->
-          <img class="gamepadHover" src="img/01_gamepad_hover.png" alt="" />
-          <img class="cardHover" src="img/01_card_hover.png" alt="" />
-          <img class="cupHover" src="img/01_cup_hover.png" alt="" />
+          <a class="boardAtag" href="#"
+            ><img class="board" src="img/00_board_img.png" alt=""
+          /></a>
         </div>
       </section>
       <section id="section3" class="section3 section">
@@ -332,27 +313,59 @@
                   >
                 </div>
               </div>
-              <div class="swiper-slide swiper-slide3">
+
+              <div class="swiper-slide swiper-slide4">
                 <div class="swiper-img-box">
-                  <img src="img/03_port_img7.png" alt="" />
+                  <img src="img/03_port_img4.png" alt="" />
                 </div>
                 <div class="swiper-text-box">
                   <div class="project-title-box">
-                    <p>동스타그램</p>
+                    <p>카카오뱅크</p>
                   </div>
                   <div class="project-skill-box">
-                    <div class="react">react</div>
+                    <div class="html">HTML</div>
+                    <div class="css">CSS</div>
+                    <div class="jquery">jQuery</div>
                   </div>
                   <div class="project-coment-box">
                     <p>
-                      동스타그램 SNS 제작 <br />
+                      카카오뱅크 홈페이지 모작 <br />
+                      PC Web
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper_btn_box swiper_btn_box2">
+                  <a
+                    href="https://dongsooo.github.io/projectkakaobank/"
+                    target="_blank"
+                    >View</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide swiper-slide4">
+                <div class="swiper-img-box">
+                  <img src="img/03_port_img8.png" alt="" />
+                </div>
+                <div class="swiper-text-box">
+                  <div class="project-title-box">
+                    <p>DSbox</p>
+                  </div>
+                  <div class="project-skill-box">
+                    <div class="html">HTML</div>
+                    <div class="css">SCSS</div>
+                    <div class="jquery">js</div>
+                  </div>
+                  <div class="project-coment-box">
+                    <p>
+                      고전게임 홈페이지 창작 <br />
                       Responsive Web
                     </p>
                   </div>
                 </div>
                 <div class="swiper_btn_box swiper_btn_box2">
                   <a
-                    href="https://dongsooo.github.io/projectdsta/"
+                    href="https://dongsooo.github.io/projectdsbox/"
                     target="_blank"
                     >View</a
                   >
@@ -387,34 +400,34 @@
                   >
                 </div>
               </div>
-              <div class="swiper-slide swiper-slide4">
+
+              <div class="swiper-slide swiper-slide3">
                 <div class="swiper-img-box">
-                  <img src="img/03_port_img4.png" alt="" />
+                  <img src="img/03_port_img7.png" alt="" />
                 </div>
                 <div class="swiper-text-box">
                   <div class="project-title-box">
-                    <p>카카오뱅크</p>
+                    <p>동스타그램</p>
                   </div>
                   <div class="project-skill-box">
-                    <div class="html">HTML</div>
-                    <div class="css">CSS</div>
-                    <div class="jquery">jQuery</div>
+                    <div class="react">react</div>
                   </div>
                   <div class="project-coment-box">
                     <p>
-                      카카오뱅크 홈페이지 모작 <br />
-                      PC Web
+                      동스타그램 SNS 제작 <br />
+                      Responsive Web
                     </p>
                   </div>
                 </div>
                 <div class="swiper_btn_box swiper_btn_box2">
                   <a
-                    href="https://dongsooo.github.io/projectkakaobank/"
+                    href="https://dongsooo.github.io/projectdsta/"
                     target="_blank"
                     >View</a
                   >
                 </div>
               </div>
+
               <div class="swiper-slide swiper-slide5">
                 <div class="swiper-img-box">
                   <img src="img/03_port_img5.png" alt="" />
@@ -507,6 +520,36 @@
                 <canvas id="myBarChart" height="500px"></canvas>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wholeWrap">
+        <div class="scheduleWrap">
+          <div class="calendarWrap">
+            <div class="scheduleWrap_xBox">
+              <i class="fa-solid fa-xmark scheduleXMark"></i>
+            </div>
+            <div class="calendar-header">
+              <button id="prev-button">Prev</button>
+              <h2 id="current-month">9월 2024</h2>
+              <button id="next-button">Next</button>
+            </div>
+          </div>
+          <div class="TodoListContainer">
+            <h1>
+              <span id="selected-date">날짜</span>
+              <p>schedule</p>
+            </h1>
+            <div class="input-container">
+              <input
+                type="text"
+                id="todo-input"
+                placeholder="할 일을 입력하세요"
+              />
+              <button id="add-button">추가</button>
+            </div>
+            <ul id="todo-list"></ul>
           </div>
         </div>
       </div>
