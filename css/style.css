@@ -678,7 +678,7 @@ body {
 /* 섹션3 시작*/
 .section3 {
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-color: rgb(213, 198, 183);
   position: relative;
   padding-bottom: 5em;
