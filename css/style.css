@@ -118,6 +118,11 @@ body {
   opacity: 1;
 }
 
+.cupAtag {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .cardHover,
 .cupHover {
   position: absolute;
@@ -678,7 +683,7 @@ body {
 /* 섹션3 시작*/
 .section3 {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: rgb(213, 198, 183);
   position: relative;
   padding-bottom: 5em;

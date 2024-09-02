@@ -23,25 +23,25 @@ function addHoverEffect(atagClass, hoverClass) {
   hoverListeners.push({ atag, mouseOverListener, mouseOutListener });
 }
 
-// function initializeHoverEffects() {
-//   if (window.innerWidth > 1023) {
-//     addHoverEffect(".notebookAtag", ".notebookHover");
-//     addHoverEffect(".phoneAtag", ".phoneHover");
-//     addHoverEffect(".bikeAtag", ".bikeHover");
-//     addHoverEffect(".paperAtag", ".paperHover");
-//     addHoverEffect(".gamepadAtag", ".gamepadHover");
-//     addHoverEffect(".cardAtag", ".cardHover");
-//     addHoverEffect(".cupAtag", ".cupHover");
-//   }
-// }
+function initializeHoverEffects() {
+  if (window.innerWidth > 1023) {
+    addHoverEffect(".notebookAtag", ".notebookHover");
+    addHoverEffect(".phoneAtag", ".phoneHover");
+    addHoverEffect(".bikeAtag", ".bikeHover");
+    addHoverEffect(".paperAtag", ".paperHover");
+    addHoverEffect(".gamepadAtag", ".gamepadHover");
+    addHoverEffect(".cardAtag", ".cardHover");
+    addHoverEffect(".cupAtag", ".cupHover");
+  }
+}
 
-// function removeHoverEffects() {
-//   hoverListeners.forEach(({ atag, mouseOverListener, mouseOutListener }) => {
-//     atag.removeEventListener("mouseover", mouseOverListener);
-//     atag.removeEventListener("mouseout", mouseOutListener);
-//   });
-//   hoverListeners = [];
-// }
+function removeHoverEffects() {
+  hoverListeners.forEach(({ atag, mouseOverListener, mouseOutListener }) => {
+    atag.removeEventListener("mouseover", mouseOverListener);
+    atag.removeEventListener("mouseout", mouseOutListener);
+  });
+  hoverListeners = [];
+}
 
 // 페이지 로드 시 호버 효과 초기화
 // initializeHoverEffects();
