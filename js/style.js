@@ -282,19 +282,20 @@ document.addEventListener("DOMContentLoaded", function () {
 function changeBackgroundColor() {
   const wrap = document.querySelector(".wrap");
   const currentColor = wrap.style.backgroundColor;
-  wrap.style.backgroundColor = currentColor === "skyblue" ? "navy" : "skyblue";
+  wrap.style.backgroundColor =
+    currentColor === "skyblue" ? "#FFB6C1" : "skyblue";
 
   // 배경색에 따라 .myRoom 요소에 필터 적용
   const myRoom = document.querySelector(".myRoom");
-  if (wrap.style.backgroundColor === "navy") {
-    myRoom.style.filter = "brightness(0.8)";
+  if (wrap.style.backgroundColor === "#FFB6C1") {
+    myRoom.style.filter = "brightness(0.9)";
   } else {
     myRoom.style.filter = "brightness(1)";
   }
 }
 
 // 30초마다 배경색 변경
-setInterval(changeBackgroundColor, 60000);
+setInterval(changeBackgroundColor, 10000);
 
 // 페이지 로드 시 초기 배경색 설정
 document.addEventListener("DOMContentLoaded", () => {
