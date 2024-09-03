@@ -106,7 +106,6 @@ body {
 }
 
 .room,
-.notebook,
 .bike,
 .phone,
 .man,
@@ -114,7 +113,8 @@ body {
 .card,
 .cup,
 .dog,
-.board {
+.board,
+.clockImg {
   transition: opacity 0.5s ease;
   opacity: 1;
 }
@@ -135,16 +135,12 @@ body {
   max-width: 100%;
 }
 
-.notebookAtag:hover .notebookHover {
-  display: block; /* 또는 visibility: visible; */
-}
-
-.notebookAtag:hover,
 .phoneAtag:hover,
 .gamepad:hover,
 .cardAtag:hover,
 .cupAtag:hover,
-.board:hover {
+.board:hover,
+.clockAtag:hover {
   transform: scale(1.15);
   animation: none;
 }
@@ -161,7 +157,7 @@ body {
   position: absolute;
   top: 37%;
   left: 30%;
-  cursor: pointer;
+  cursor: auto;
 }
 
 .bikeAtag {
@@ -240,6 +236,16 @@ body {
   cursor: pointer;
 }
 
+.clockAtag {
+  max-width: 100%;
+  width: 5%;
+  height: auto;
+  position: absolute;
+  top: 23%;
+  left: 29%;
+  cursor: pointer;
+}
+
 .cupAtag {
   max-width: 100%;
   width: 3%;
@@ -288,7 +294,6 @@ body {
   }
 }
 
-.notebook,
 .gamepadAtag,
 .cupAtag,
 .boardAtag {
@@ -297,7 +302,8 @@ body {
 
 .phone,
 .bike,
-.cardAtag {
+.cardAtag,
+.clockAtag {
   animation: scale2 1.5s ease-in-out infinite;
 }
 
@@ -1264,9 +1270,9 @@ h2 {
 .gameContentsWrap {
   width: 1023px;
   height: 90vh;
-  background-image: url(../img/05_backgound_img.png);
+  /* background-image: url(../img/05_backgound_img.png);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 
   position: relative;
   top: 50%;
@@ -1415,6 +1421,7 @@ h2 {
   text-shadow: 1px 1px 2px black; /* 텍스트에 그림자 추가 */
   text-align: center;
   margin-bottom: 30px;
+  padding-top: 30px;
 }
 
 #game-container {
@@ -1525,4 +1532,120 @@ button {
   transform: translate(-50%, -50%);
 }
 
-/* 슈팅게임 */
+/* 시계 관련 */
+
+.clockWrap {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.523);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.clockContentBox {
+  width: 360px;
+  height: 360px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0;
+
+  color: #9c9c9c;
+  font-family: Arial, sans-serif;
+}
+
+.clock_xBox {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 2em;
+}
+
+.clock_xBox i {
+  cursor: pointer;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 10px solid #9c9c9c;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.hand {
+  position: absolute;
+  width: 50%;
+  background: black;
+  border-radius: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+}
+
+.hour {
+  height: 6px;
+  top: 50%;
+  width: 40%;
+  left: 9.8%;
+}
+
+.minute {
+  height: 4px;
+  top: 50%;
+}
+
+.second {
+  height: 2px;
+  top: 50%;
+  background: red;
+}
+
+.center {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #9c9c9c;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.number {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #9c9c9c;
+}
+
+.number-12 {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.number-3 {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.number-6 {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.number-9 {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}

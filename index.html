@@ -17,6 +17,10 @@
       crossorigin="anonymous"
     ></script>
     <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
@@ -117,11 +121,7 @@
         <div class="myRoom">
           <img class="room" src="img/00_room3_img.png" alt="방 일러스트" />
 
-          <a
-            class="notebookAtag"
-            href="https://dongsooo.github.io/projectdsta/"
-            target="_blank"
-          >
+          <a class="notebookAtag" href="#">
             <img
               class="notebook"
               src="img/00_notebook_img.png"
@@ -176,6 +176,9 @@
           </a>
           <a class="boardAtag" href="#"
             ><img class="board" src="img/00_board_img.png" alt=""
+          /></a>
+          <a class="clockAtag" href="#"
+            ><img class="clockImg" src="img/00_clock_img.png" alt=""
           /></a>
         </div>
       </section>
@@ -553,15 +556,6 @@
 
       <div class="gameWrap">
         <div class="gameContentsWrap">
-          <!-- <div class="gameContentsWrap_xBox">
-            <i class="fa-solid fa-xmark gameContentsXmark"></i>
-          </div> -->
-          <!-- <div class="gamePosterWrap">
-            <div class="tetrisPoster"></div>
-            <div class="shootingPoster"></div>
-            <div class="imagePuzzlePoster"></div>
-            <div class="keyboardPoster"></div>
-          </div> -->
           <div class="tetrisGame">
             <div class="tetris_xBox">
               <i class="fa-solid fa-xmark tetrisXmark"></i>
@@ -585,31 +579,24 @@
               </button>
             </div>
           </div>
-          <!-- <div class="shootingGame">
-            <div class="shooting_xBox">
-              <i class="fa-solid fa-xmark shootingXmark"></i>
-            </div>
-            <div class="shootingContents">
-              <div class="contentsWrap">
-                <button id="startButton">
-                  <img src="./img/04_Shooting_img8.png" alt="" />
-                </button>
-                <button id="restartButton" style="display: none">
-                  <img src="./img/04_Shooting_img9.png" alt="" />
-                </button>
-              </div>
-            </div>
+        </div>
+      </div>
+
+      <div class="clockWrap">
+        <div class="clockContentBox">
+          <div class="clock_xBox">
+            <i class="fa-solid fa-xmark clockXmark"></i>
           </div>
-          <div class="imagePuzzleGame">
-            <div class="imagePuzzle_xBox">
-              <i class="fa-solid fa-xmark imagePuzzleXmark"></i>
-            </div>
+          <div class="clock">
+            <div class="hand hour" id="hour-hand"></div>
+            <div class="hand minute" id="minute-hand"></div>
+            <div class="hand second" id="second-hand"></div>
+            <div class="center"></div>
+            <div class="number number-12">12</div>
+            <div class="number number-3">3</div>
+            <div class="number number-6">6</div>
+            <div class="number number-9">9</div>
           </div>
-          <div class="keyboardGame">
-            <div class="keyboard_xBox">
-              <i class="fa-solid fa-xmark keyboardXmark"></i>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
