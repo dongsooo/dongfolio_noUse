@@ -295,7 +295,7 @@ function changeBackgroundColor() {
 }
 
 // 30초마다 배경색 변경
-setInterval(changeBackgroundColor, 10000);
+setInterval(changeBackgroundColor, 60000);
 
 // 페이지 로드 시 초기 배경색 설정
 document.addEventListener("DOMContentLoaded", () => {
