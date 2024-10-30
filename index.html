@@ -118,6 +118,81 @@
             ><img class="clockImg" src="img/00_clock_img.png" alt=""
           /></a>
         </div>
+        <div class="wholeWrap">
+          <div class="scheduleWrap">
+            <div class="calendarWrap">
+              <div class="scheduleWrap_xBox">
+                <i class="fa-solid fa-xmark scheduleXMark"></i>
+              </div>
+              <div class="calendar-header">
+                <button id="prev-button">Prev</button>
+                <h2 id="current-month">9월 2024</h2>
+                <button id="next-button">Next</button>
+              </div>
+            </div>
+            <div class="TodoListContainer">
+              <h1>
+                <span id="selected-date">날짜</span>
+                <p>스케줄</p>
+              </h1>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="todo-input"
+                  placeholder="할 일을 입력하세요"
+                />
+                <button id="add-button">추가</button>
+              </div>
+              <ul id="todo-list"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="gameWrap">
+          <div class="gameContentsWrap">
+            <div class="tetrisGame">
+              <div class="tetris_xBox">
+                <i class="fa-solid fa-right-from-bracket tetrisXmark"></i>
+              </div>
+              <div class="tetrisContents">
+                <div id="score-board">Score: 0</div>
+                <div id="game-container">
+                  <canvas id="tetris"></canvas>
+                  <div id="next-block">
+                    <h3>Next Block</h3>
+                  </div>
+                </div>
+                <div id="game-over">
+                  <img src="img/02_gameover_img2.png" alt="" />
+                </div>
+                <button id="start-button">
+                  <img src="img/02_start_img.png" alt="" />
+                </button>
+                <button id="restart-button" style="display: none">
+                  <img src="img/02_replay_img.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clockWrap">
+          <div class="clockContentBox">
+            <div class="clock_xBox">
+              <i class="fa-solid fa-xmark clockXmark"></i>
+            </div>
+            <div class="clock">
+              <div class="hand hour" id="hour-hand"></div>
+              <div class="hand minute" id="minute-hand"></div>
+              <div class="hand second" id="second-hand"></div>
+              <div class="center"></div>
+              <div class="number number-12">12</div>
+              <div class="number number-3">3</div>
+              <div class="number number-6">6</div>
+              <div class="number number-9">9</div>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="section3" class="section3 section">
         <div class="section2-text-wrap">
@@ -457,82 +532,6 @@
                 <canvas id="myBarChart" height="500px"></canvas>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="wholeWrap">
-        <div class="scheduleWrap">
-          <div class="calendarWrap">
-            <div class="scheduleWrap_xBox">
-              <i class="fa-solid fa-xmark scheduleXMark"></i>
-            </div>
-            <div class="calendar-header">
-              <button id="prev-button">Prev</button>
-              <h2 id="current-month">9월 2024</h2>
-              <button id="next-button">Next</button>
-            </div>
-          </div>
-          <div class="TodoListContainer">
-            <h1>
-              <span id="selected-date">날짜</span>
-              <p>스케줄</p>
-            </h1>
-            <div class="input-container">
-              <input
-                type="text"
-                id="todo-input"
-                placeholder="할 일을 입력하세요"
-              />
-              <button id="add-button">추가</button>
-            </div>
-            <ul id="todo-list"></ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="gameWrap">
-        <div class="gameContentsWrap">
-          <div class="tetrisGame">
-            <div class="tetris_xBox">
-              <i class="fa-solid fa-right-from-bracket tetrisXmark"></i>
-            </div>
-            <div class="tetrisContents">
-              <div id="score-board">Score: 0</div>
-              <div id="game-container">
-                <canvas id="tetris"></canvas>
-                <div id="next-block">
-                  <h3>Next Block</h3>
-                </div>
-              </div>
-              <div id="game-over">
-                <img src="img/02_gameover_img2.png" alt="" />
-              </div>
-              <button id="start-button">
-                <img src="img/02_start_img.png" alt="" />
-              </button>
-              <button id="restart-button" style="display: none">
-                <img src="img/02_replay_img.png" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="clockWrap">
-        <div class="clockContentBox">
-          <div class="clock_xBox">
-            <i class="fa-solid fa-xmark clockXmark"></i>
-          </div>
-          <div class="clock">
-            <div class="hand hour" id="hour-hand"></div>
-            <div class="hand minute" id="minute-hand"></div>
-            <div class="hand second" id="second-hand"></div>
-            <div class="center"></div>
-            <div class="number number-12">12</div>
-            <div class="number number-3">3</div>
-            <div class="number number-6">6</div>
-            <div class="number number-9">9</div>
           </div>
         </div>
       </div>
