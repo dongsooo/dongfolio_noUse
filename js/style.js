@@ -406,8 +406,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const addButton = document.getElementById("add-button");
   const selectedDateElement = document.getElementById("selected-date");
 
-  let currentYear = 2024; // 초기 연도
-  let currentMonth = 8; // 초기 월 (0 = January, 8 = September)
+  const today = new Date();
+  let currentYear = today.getFullYear(); // 현재 연도
+  let currentMonth = today.getMonth(); // 현재 월
   let selectedDate = null; // 선택된 날짜
   let datesWithTodos = new Map(); // 투두가 있는 날짜와 개수를 저장할 Map
 
@@ -655,7 +656,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 초기화
   updateMonthLabel(currentYear, currentMonth);
   generateCalendar(currentYear, currentMonth);
   setupEventListeners();

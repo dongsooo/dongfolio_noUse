@@ -934,6 +934,10 @@ body {
   left: 0;
   display: none;
 }
+
+#current-month {
+  color: white;
+}
 @media (max-width: 715px) {
   .wholeWrap {
     height: 100vh;
