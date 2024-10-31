@@ -45,7 +45,7 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <div class="wrap">
+    <div id="fullpage" class="wrap">
       <section id="section1" class="section1 section">
         <div class="text-box section1Text">
           <h1 class="pc-text">
@@ -175,6 +175,13 @@
             </div>
           </div>
         </div>
+        <div class="gameMessageWrap">
+          <div class="gameMessageBox">
+            <div class="gameMessageTextBox">
+              모바일에서는 지원하지 않습니다.
+            </div>
+          </div>
+        </div>
 
         <div class="clockWrap">
           <div class="clockContentBox">
@@ -190,6 +197,30 @@
               <div class="number number-3">3</div>
               <div class="number number-6">6</div>
               <div class="number number-9">9</div>
+            </div>
+          </div>
+        </div>
+        <div class="myIntroduce">
+          <div class="myIntroduceContent">
+            <div class="myIntroduceContent_xBox">
+              <i class="fa-solid fa-xmark xMark"></i>
+            </div>
+            <div class="myIntroduceContent_titleBox">
+              <p>About me</p>
+            </div>
+            <div class="myIntroduceContent_textBox">
+              <div class="textTopbox">
+                <div class="pictureBox"></div>
+                <div class="myInfoBox">
+                  <p>이름 : 김동수</p>
+                  <p>생년월일 : 1989.10.8</p>
+                  <p>핸드폰 : 010-3765-9984</p>
+                  <p>이메일 : ehdtn8910@naver.com</p>
+                </div>
+              </div>
+              <div class="bottomBox">
+                <div class="bottomSkillBox"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -239,7 +270,7 @@
               </div>
             </div>
             <div class="section3-graph-box">
-              <canvas id="myChart2"></canvas>
+              <canvas id="myBarChart"></canvas>
             </div>
           </div>
           <div class="section3-content_right-box">
@@ -508,33 +539,6 @@
         </div>
         <div class="section2-padding"></div>
       </section>
-
-      <div class="myIntroduce">
-        <div class="myIntroduceContent">
-          <div class="myIntroduceContent_xBox">
-            <i class="fa-solid fa-xmark xMark"></i>
-          </div>
-          <div class="myIntroduceContent_titleBox">
-            <p>About me</p>
-          </div>
-          <div class="myIntroduceContent_textBox">
-            <div class="textTopbox">
-              <div class="pictureBox"></div>
-              <div class="myInfoBox">
-                <p>이름 : 김동수</p>
-                <p>생년월일 : 1989.10.8</p>
-                <p>핸드폰 : 010-3765-9984</p>
-                <p>이메일 : ehdtn8910@naver.com</p>
-              </div>
-            </div>
-            <div class="bottomBox">
-              <div class="bottomSkillBox">
-                <canvas id="myBarChart" height="500px"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <script src="js/style.js"></script>

@@ -73,7 +73,7 @@ let animationComplete = false;
 
 // 막대 그래프 생성
 let myBarChart = new Chart(ctx, {
-  type: "bar", // 그래프 유형: 막대 그래프
+  type: "bar",
   data: {
     labels: [
       "HTML+CSS",
@@ -84,13 +84,13 @@ let myBarChart = new Chart(ctx, {
       "SCSS",
       "Tailwind",
       "TypeScript",
-    ], // X 축 레이블
+    ],
     datasets: [
       {
-        label: "숙련도", // 레이블 비움
-        data: skillData, // 각 막대의 데이터 값
+        label: "숙련도",
+        data: skillData,
         backgroundColor: [
-          "rgba(255, 99, 132, 0.7)", // 막대 색상
+          "rgba(255, 99, 132, 0.7)",
           "rgba(54, 162, 235, 0.7)",
           "rgba(255, 206, 86, 0.7)",
           "rgba(75, 192, 192, 0.7)",
@@ -100,7 +100,7 @@ let myBarChart = new Chart(ctx, {
           "rgba(125, 138, 188, 0.7)",
         ],
         borderColor: [
-          "rgba(255, 99, 132, 1)", // 막대 테두리 색상
+          "rgba(255, 99, 132, 1)",
           "rgba(54, 162, 235, 1)",
           "rgba(255, 206, 86, 1)",
           "rgba(75, 192, 192, 1)",
@@ -109,29 +109,29 @@ let myBarChart = new Chart(ctx, {
           "rgba(152, 125, 154, 1)",
           "rgba(125, 138, 188, 1)",
         ],
-        borderWidth: 1, // 막대 테두리 두께
+        borderWidth: 1,
       },
     ],
   },
   options: {
-    indexAxis: "x", // Y 축에 데이터 표시
+    indexAxis: "x",
     plugins: {
       legend: {
-        display: false, // 레전드(범례) 숨기기
+        display: false,
       },
     },
     scales: {
       x: {
-        beginAtZero: true, // X 축 시작 값 설정
+        beginAtZero: true,
       },
     },
-    responsive: true, // 반응형 크기 조정
-    maintainAspectRatio: false, // 캔버스 비율 유지 해제
+    responsive: true,
+    maintainAspectRatio: false,
     animation: {
       duration: 500,
       easing: "easeOutQuart",
       onProgress: function (animation) {
-        if (animationComplete) return; // 애니메이션이 완료된 경우 실행 중지
+        if (animationComplete) return;
         const chart = animation.chart;
         const width = chart.width;
         const height = chart.height;
@@ -147,76 +147,19 @@ let myBarChart = new Chart(ctx, {
         chart.draw();
         ctx.restore();
       },
-      onComplete: function () {
-        animationComplete = true; // 애니메이션 완료 상태 설정
-        // 애니메이션 콜백 제거
-        myBarChart.options.animation.onProgress = null;
-        myBarChart.options.animation.onComplete = null;
-      },
     },
   },
 });
 
+// 애니메이션 완료 콜백 설정 (myBarChart 생성 후 추가)
+myBarChart.options.animation.onComplete = function () {
+  animationComplete = true;
+  // 애니메이션 콜백 제거
+  myBarChart.options.animation.onProgress = null;
+  myBarChart.options.animation.onComplete = null;
+};
+
 //그래프 함수2
-let ctx2 = document.getElementById("myChart2").getContext("2d");
-var myChart = new Chart(ctx2, {
-  type: "bar",
-  data: {
-    labels: [
-      "HTML+CSS",
-      "JavaScript",
-      "Jquery",
-      "React",
-      "Bootstrap",
-      "SCSS",
-      "Tailwind",
-      "TypeScript",
-    ],
-    datasets: [
-      {
-        label: "숙련도", // 레이블 비움
-        data: skillData, // 각 막대의 데이터 값
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.7)", // 막대 색상
-          "rgba(54, 162, 235, 0.7)",
-          "rgba(255, 206, 86, 0.7)",
-          "rgba(75, 192, 192,0.7)",
-          "rgba(255, 102, 102, 0.7)",
-          "rgba(255, 203, 153, 0.7)",
-          "rgba(152, 125, 154, 0.7)",
-          "rgba(125, 138, 188, 0.7)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)", // 막대 테두리 색상
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(255, 102, 102, 1)",
-          "rgba(255, 203, 153, 1)",
-          "rgba(152, 125, 154, 1)",
-          "rgba(125, 138, 188, 1)",
-        ],
-        borderWidth: 1, // 막대 테두리 두께
-      },
-    ],
-  },
-  options: {
-    indexAxis: "x", // 가로 막대 차트로 변경
-    plugins: {
-      legend: {
-        display: false, // 범례 비활성화
-      },
-      title: {
-        display: false, // 제목 비활성화
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
 
 // 스케줄러 클릭 이벤트
 
@@ -227,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   boardAtag.addEventListener("click", function (event) {
     event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     mySchedule.style.display = "block";
     document.body.style.overflow = "hidden";
   });
@@ -243,17 +187,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const xMark = document.querySelector(".tetrisXmark");
   const gameWrap = document.querySelector(".gameWrap");
   const tetrisGame = document.querySelector(".tetrisGame");
+  const tetrisMessage = document.querySelector(".gameMessageWrap");
+  const messageXmark = document.querySelector(".gameMessageXmark");
 
   gamepadAtag.addEventListener("click", function (event) {
     event.preventDefault();
-    gameWrap.style.display = "block";
-    tetrisGame.style.display = "block";
+
+    // 화면 맨 위로 스크롤 이동
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (window.innerWidth <= 686) {
+      // 화면 너비가 686px 이하일 때
+      gameWrap.style.display = "none";
+      tetrisMessage.style.display = "block";
+    } else {
+      // 화면 너비가 686px 초과일 때
+      gameWrap.style.display = "block";
+      tetrisGame.style.display = "block";
+    }
+
     document.body.style.overflow = "hidden";
   });
 
   xMark.addEventListener("click", function () {
     gameWrap.style.display = "none";
     tetrisGame.style.display = "none";
+    tetrisMessage.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+
+  tetrisMessage.addEventListener("click", () => {
+    tetrisMessage.style.display = "none";
     document.body.style.overflow = "auto";
   });
 });
@@ -265,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   clockpadAtag.addEventListener("click", function (event) {
     event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
     clockWrap.style.display = "block";
     document.body.style.overflow = "hidden";
   });
@@ -1054,3 +1019,5 @@ function updateClock() {
 
 setInterval(updateClock, 1000);
 updateClock(); // Call once to initialize the clock
+
+// 풀페이지

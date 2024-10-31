@@ -52,7 +52,7 @@ body {
 
 .section1 {
   width: 100%;
-
+  height: 100vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -414,17 +414,6 @@ body {
   bottom: 0%;
 }
 
-/* #myBarChart {
-  min-width: 320px;
-} */
-
-/* #myBarChart {
-  max-width: 1000px;
-  width: 80%; 
-
-  margin: auto; 
-} */
-
 .text-box {
   display: flex;
   justify-content: center;
@@ -444,7 +433,6 @@ body {
 }
 
 .text-box p {
-  margin-top: 20px;
   font-size: 25px;
   text-align: center;
 }
@@ -459,24 +447,29 @@ body {
 /* 섹션2 시작 */
 .section2 {
   width: 100%;
-  height: auto;
+  height: 100vh;
   background-color: #f5efe6;
   position: relative;
-  padding-bottom: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .section2-text-wrap {
-  max-width: 1550px;
+  width: 100%;
   margin: 0 auto;
   padding-left: 20px;
-  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
 }
 
 .section2-title-box {
   display: flex;
   align-items: center;
 
-  /* background-color: red; */
   width: 100%;
   height: 50px;
 }
@@ -484,14 +477,19 @@ body {
 .section2-title-box h3 {
   color: tomato;
   margin-top: 2em;
+  margin-bottom: 1em;
   /* top: 50%; */
   /* transform: translateY(-50%); */
+}
+
+.section2-text-box {
+  width: 100%;
 }
 
 .section2-text-box p {
   font-size: 4em;
   font-weight: bold;
-  margin-top: 0.5em;
+  line-height: 70px;
   /* letter-spacing: -2px; */
 }
 
@@ -501,7 +499,7 @@ body {
 
 .section2-swiper-box {
   overflow: hidden;
-  margin-top: 3em;
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -509,8 +507,7 @@ body {
 }
 
 .swiper-container {
-  /* background-color: red; */
-  height: 700px;
+  height: 600px;
   width: 100%;
 
   box-sizing: border-box;
@@ -526,8 +523,8 @@ body {
 }
 
 .swiper-slide {
-  width: 320px;
-  height: 500px;
+  width: 300px;
+  height: 480px;
   border-radius: 25px;
   overflow: hidden;
   margin: 0 auto;
@@ -631,7 +628,7 @@ body {
 }
 
 .swiper_btn_box {
-  width: 300px;
+  width: 250px;
   height: 50px;
   position: absolute;
   top: 88%;
@@ -667,14 +664,14 @@ body {
 
 .swiper-button-prev {
   left: 45%;
-  top: 90%;
+  top: 95%;
 
   transform: translateX(-50%);
 }
 
 .swiper-button-next {
   left: 55%;
-  top: 90%;
+  top: 95%;
   transform: translateX(-50%);
 }
 
@@ -696,24 +693,28 @@ body {
 /* 섹션3 시작*/
 .section3 {
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
   background-color: rgb(213, 198, 183);
   position: relative;
-  padding-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* padding-bottom: 5em; */
 }
 
 .section3-content-box {
   display: flex;
-  max-width: 1550px;
+  width: 100%;
+  height: 600px;
   margin: 0 auto;
   padding-left: 20px;
-  padding-top: 2em;
 }
 
 .section3-content_left-box,
 .section3-content_right-box {
   display: flex;
   flex: 1;
+  height: 100%;
 }
 
 .section3-content_left-box {
@@ -725,6 +726,9 @@ body {
 
 .section3-introduce-box {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section3-item-box {
@@ -774,6 +778,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5em;
+  height: 100%;
 }
 
 .stand-man {
@@ -785,12 +790,15 @@ body {
 .section3-graph-box {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.section3-graph-box > #myChart2 {
+.section3-graph-box > #myBarChart {
   padding: 20px;
-  width: 100% !important;
-  height: 100% !important;
+  width: 500px !important;
+  height: 400px !important;
 }
 /* 섹션3 끝 */
 
@@ -821,7 +829,6 @@ body {
 
   .section1 {
     flex-direction: column;
-    margin-bottom: 5em;
   }
 
   .pc-text {
@@ -860,7 +867,6 @@ body {
   }
   .section2-title-box > h3 {
     margin: 0 auto;
-    padding-top: 1em;
   }
 
   .section2-text-box {
@@ -869,8 +875,9 @@ body {
 
   .section2-text-box > p {
     display: inline-block;
-
+    margin-top: 0;
     text-align: start;
+    line-height: 50px;
   }
 
   .textTopbox {
@@ -884,12 +891,20 @@ body {
   }
 
   .section3-content-box {
+    height: 724px;
     flex-direction: column;
     padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .section3-content_right-box {
     order: 1;
+    margin-top: 40px;
   }
 
   .stand-man {
@@ -898,18 +913,85 @@ body {
   .section3-content_left-box {
     flex-direction: column;
     order: 2;
+    width: 100%;
+  }
+
+  .section3-tooltip-box {
+    display: none;
+  }
+
+  .section3-graph-box > #myBarChart {
+    width: 90% !important;
+    height: 100% !important;
+    padding: 0;
+  }
+
+  .section3-introduce-box {
+    justify-content: start;
+  }
+
+  .section3-item-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 890px) {
-  .section1 {
-    height: auto;
+@media (max-width: 688px) {
+  .section3-content_left-box {
+    width: 100%;
+  }
+
+  .section3-item-box {
+    /* display: none; */
+    margin: 4px;
+  }
+
+  .section3-tooltip-box {
+    display: none;
+  }
+
+  .section3-content_img-box {
+    margin-bottom: 0;
+  }
+
+  .swiper-slide {
+    width: 300px;
+    height: 400px;
+  }
+
+  .project-coment-box > p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .swiper_btn_box {
+    width: 150px;
+    height: 30px;
+    top: 91%;
+  }
+
+  .swiper-button-prev {
+    left: 25%;
+    top: 93%;
+  }
+
+  .swiper-button-next {
+    left: 75%;
+    top: 93%;
+  }
+
+  .section3-graph-box > #myBarChart {
+    width: 500px !important;
+    height: 220px !important;
+  }
+
+  .swiper-container {
+    height: 530px;
   }
 }
 
 @media (max-width: 715px) {
   .section1 {
-    height: auto;
     justify-content: baseline;
   }
 }
@@ -948,7 +1030,7 @@ body {
   display: flex;
   width: 1000px;
   justify-content: space-around;
-  /* background-color: tomato; */
+
   position: relative;
   top: 50%;
   left: 50%;
@@ -1157,6 +1239,20 @@ button.delete:hover {
   transition: background-color 0.3s;
 }
 
+@media (max-width: 715px) {
+  .calendar-header {
+    justify-content: center;
+  }
+
+  #prev-button {
+    margin-right: 1em;
+  }
+
+  #next-button {
+    margin-left: 1em;
+  }
+}
+
 #prev-button:hover,
 #next-button:hover {
   background-color: rgb(111, 182, 210);
@@ -1250,7 +1346,7 @@ h2 {
 
 @media (max-width: 715px) {
   .scheduleWrap_xBox {
-    top: -25px;
+    top: 17px;
     left: 0;
   }
 }
@@ -1271,6 +1367,7 @@ h2 {
   left: 0;
   top: 0;
   display: none;
+  z-index: 100;
 }
 
 .gameContentsWrap {
@@ -1502,6 +1599,38 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.gameMessageWrap {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.524);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: none;
+  overflow: hidden;
+}
+
+.gameMessageBox {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.gameMessageTextBox {
+  width: 100%;
+  text-align: center;
+  color: white;
 }
 
 /* 시계 관련 */
