@@ -222,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// 시계 클릭 함수
 document.addEventListener("DOMContentLoaded", function () {
   const clockpadAtag = document.querySelector(".clockAtag");
   const xMark = document.querySelector(".clockXmark");
